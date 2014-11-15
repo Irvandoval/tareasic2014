@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+<title> Metodo del costo Promedio </title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="../css/estilo.css" rel="stylesheet" type="text/css" media="all"/> 
+<script type="text/javascript" src="../JavaScript/jquery.js"> </script>
+<script type="text/javascript" src="../JavaScript/InventarioCostoPromedio.js"> </script> 	
+</head>
+ 
+ 
+<body>
+
+<div id="wrapper">   
+<div id="pagina">
+	
+<form name="first">
+<table  align="center" border="1" cellspacing="4" cellspacing="4" class="tabla">
+	<tbody>
+		<tr class="modo1"> 
+			<td></td> 
+			<th>Unidad</th> 
+			<th>Costo</th> 
+			<th>Saldo</th> 
+			<th>Costo Promedio</th> 
+		</tr>
+		<!-- Efectuo Primero el inventario inicial -->
+		<tr align="center" class="modo2">
+			<td align="left">Inventario Inicial </td> 
+			<td>  
+			     <input value="" id="unidadi" onkeyup="checnum(this); metodoCostoPromedio();" size="5" type="text"> 
+		    </td> 
+			<td> 
+			     <input value="" id="costoi" onkeyup="checnum(this); metodoCostoPromedio();" size="5" type="text"> 
+			</td> 
+			<td> 
+			     <input value="" id="saldoi" size="5" readonly="readonly" type="text"> 
+			</td> 
+			<td> 
+			     <input value="" id="costoproi" size="5" readonly="readonly" type="text"> 
+			</td> 
+		</tr>
+		<!-- Fin inventario inicial -->
+	
+	
+		<!-- Efectuo la segundra transaccion ya sea compra o venta -->
+		<tr align="center">
+			<td align="left">
+				<select id="sel0" onchange="calculo_inventario(this)"> 
+				  <option selected="selected" value="suma">Compra</option> 
+				  <option value="resta">Venta</option> 
+				</select> 
+				<br> 
+				<span style="float:right; font-weight:bold;"> Unidades </span> 
+			</td> 
+			
+			<td> 
+			  <input value="" id="uni0" onkeyup="checnum(this);metodoCostoPromedio();" size="5" type="text"><br> 
+			  <input value="" id="balu0" readonly="readonly" size="5" type="text"> 
+			</td> 
+			
+			<td> 
+				<input value="" id="cos0" onkeyup="checnum(this);metodoCostoPromedio();" size="5" type="text"> <br> &nbsp; 
+			</td> 
+			
+			<td> 
+				<input value="" id="tot0" size="5" readonly="readonly" type="text"><br> 
+				<input value="" id="balt0" size="5" readonly="readonly" type="text"> 
+			</td>
+			
+			<td> 
+				<br> <input value="" id="avg0" size="5" readonly="readonly" type="text"> 
+			</td>
+	    </tr>
+		<!-- Fin de la segundra transaccion ya sea compra o venta -->
+		
+		<tr align="center">
+			<td align="left"><div id="selec"></div> </td> 
+			<td><div id="unidad"></div></td> 
+			<td><div id="costou"></div></td> 
+			<td><div id="saldo"></div></td> 
+			<td><div id="costop"></div></td> 
+		</tr>
+		<!-- Agrego nueva transaccion ya sea compra o venta -->
+		
+		<tr  align="center">
+			<input id="nfila" value="0" type="hidden">
+			<td colspan="3"> <input  class="boton  negro formaBoton" value="Agregar Transaccion" onclick="campo_entrada(1)" type="button">  </td>
+		
+			<td colspan="2" align="center"><input  class="boton negro formaBoton" value="Reiniciar" onclick="limpiar()" type="reset"> </td> 
+		</tr>
+	</tbody>
+</table>
+</form>
+
+              
+    </div> 
+ </div> 
+			
+</body>
+</html>
