@@ -1,0 +1,38 @@
+/* botones*/
+
+.boton{
+	display: inline-block;
+	margin-top: 10px;
+	padding: 4px 7px;
+	background: #333;
+	background-image:linear-gradient(to bottom,#0D98FB,#1A5DB3);
+	text-decoration: none;
+	text-transform: uppercase;
+	color: #1a010e;
+}
+
+/*recuadros*/
+
+fieldset {
+ width:700px;
+ border:1px double #0080FF;
+ -webkit-border-radius: 10px;
+ -moz-border-radius: 10px;
+ border-radius: 10px;
+ -webkit-box-shadow: 8px 8px 6px #808080;
+ -moz-box-shadow: 8px 8px 6px #808080;
+ box-shadow: 8px 8px 6px #808080;
+ background-color: #CEECF5;
+ padding: 10px;
+ font-family: Verdana, Geneva, sans-serif;
+ color: #0B173B;
+ text-align:center;
+ }
+ legend {
+ text-align:center;
+ font-weight:bold;
+ font-size:18pt;
+ color:#1a010e;
+ }
+ 
+ 
