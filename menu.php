@@ -9,7 +9,7 @@ echo
 <nav id='menu-wrap'>    
 	<ul id='menu'>
 	    
-		<li><a href='/'>Inicio</a></li>
+		<li><a href='#'>Inicio</a></li>
 		<li>
 			<a href=''>Usuarios</a>
 			<ul>

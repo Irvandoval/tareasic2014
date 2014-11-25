@@ -32,13 +32,13 @@ Conexion::conectar();
 	<legend>Agregar Empleado</legend>
 	<table cellspacing="5" class='tabla'>
 	  <tr>
-          <td class='modo3'><label for="nombre">Nombre</label></td>  <td class='modo2'> <input type="text" name="nombre"></td>
+          <td ><label for="nombre">Nombre</label></td>  <td class='modo2'> <input type="text" name="nombre"></td>
       </tr>
 	  <tr>
-	      <td class='modo3'><label for="apellido">Apellido</label>  <td class='modo2'><input type="text" name="apellido">
+	      <td ><label for="apellido">Apellido</label>  <td class='modo2'><input type="text" name="apellido">
 	  </tr>
 	  <tr>
-	      <td class='modo3'><label for="puesto">Puesto</label></td>
+	      <td><label for="puesto">Puesto</label></td>
 	      <td class='modo2'>
 		     <select name="puesto">
 	          <option value="0">Seleccione el Cargo</option>
@@ -54,7 +54,7 @@ Conexion::conectar();
 		</td>
     </tr>
 	<tr>
-	    <td class='modo3'><label for="sexo">Sexo</label></td>
+	    <td ><label for="sexo">Sexo</label></td>
 	    <td class='modo2'>
 		    <select name="sexo">
 			<option value="0">Seleccione el Sexo </option>
@@ -64,14 +64,14 @@ Conexion::conectar();
 		</td>
     </tr>
 	<tr>
-	    <td class='modo3'><label for="salario">Salario</label></td>  <td class='modo2'><input type="text" name="salario"><BR></td>
+	    <td><label for="salario">Salario</label></td>  <td class='modo2'><input type="text" name="salario"><BR></td>
 	</tr>
 	<tr>
-	    <td class='modo3'><label for="horas">Horas Extras</label></td>  <td class='modo2'><input type="text" name="horas"><BR></td>
+	    <td ><label for="horas">Horas Extras</label></td>  <td class='modo2'><input type="text" name="horas"><BR></td>
     </tr>
     <tr >	
 	    <td colspan="2">
-		<input type="submit"  class="boton negro formaBoton" value="Procesa Datos"/>
+		<input type="submit"  class="boton" value="Procesa Datos"/>
 		<input  type="hidden" name="envio"  value="si" />
 		</td>
 	</tr> 

@@ -217,8 +217,8 @@ function eliminaEmpleado()
  {  
       $usuario="SELECT nombre, apellido FROM empleado";
       $consulta=mysql_query($usuario) or die(mysql_error());
-	  echo "<table border='1' aling='left' class='tabla'>";
-	  echo "<tr class='modo3'>  
+	  echo "<table border='0' aling='left' class='tabla'>";
+	  echo "<tr class='modo1'>  
 		         <td>Correlativo </td>
 			     <td>nombre </td>
 			     <td>apellido </td>

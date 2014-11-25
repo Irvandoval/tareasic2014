@@ -41,7 +41,7 @@ menu2();
 <form action='InventarioOperacion.php' method='post' id='ope'>
 <fieldset> 
 <legend>Nueva Transaccion</legend>
-<table border='1'  class='tabla' cellspacing='2' cellspacing='2'>
+<table border='0'  class='tabla' cellspacing='2' cellspacing='2'>
    <tr class='modo1'> 
         <td>Producto</td>
         <td> <?php buscaProducto(); ?>   </td>
@@ -102,7 +102,7 @@ menu2();
 		<td><input type="text" name="precio"></td>
    </tr>
 </table>
-<input type="submit" class='boton negro formaBoton' value="Agregar Trasaccion"> 
+<input type="submit" class='boton' value="Agregar Trasaccion"> 
 </fieldset> 
 </form>
 </div>
@@ -110,7 +110,7 @@ menu2();
  <div id="derecha"  id="content" align="justify">
   <fieldset> 
 	<legend>Metodo</legend>
-	  <h4>Para establecer aquel costo promedio de los inventarios, se realiza un promedio entre el costo de los inventarios que se poseen y el costo de aquellos inventarios que se van adquiriendo. La aplicación de las NIIF (se está llevando a cabo por muchas empresas a nivel mundial, esto con el objetivo de preparar y presentar Estados Financieros más razonables. Teniendo presente lo mencionado. Recuerda que al llevar contabilidad con las NIIF, si se permite la aplicación del método promedio ponderado. Es decir, si aplicas NIIF COMPLETAS o NIIF para PYMES, puedes llevar como método de valoración de inventarios el método Promedio Ponderado. 
+	  <h4>       Para establecer aquel costo promedio de los inventarios, se realiza un promedio entre el costo de los inventarios que se poseen y el costo de aquellos inventarios que se van adquiriendo. La aplicaci&#243;n de las NIIF (se est&#225; llevando a cabo por muchas empresas a nivel mundial, esto con el objetivo de preparar y presentar Estados Financieros m&#225;s razonables. Teniendo presente lo mencionado. Recuerda que al llevar contabilidad con las NIIF, si se permite la aplicaci&#243;n del m&#233;todo promedio ponderado. Es decir, si aplicas NIIF COMPLETAS o NIIF para PYMES, puedes llevar como m&#233;todo de valoraci&#243;n de inventarios el m&#233;todo Promedio Ponderado. 
 	  </h4>
   </fieldset>
   </div> 

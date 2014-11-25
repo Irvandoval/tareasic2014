@@ -17,6 +17,7 @@ if(isset($_POST["envio"]) and $_POST["envio"] == "si")
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
 	<link href="css/estilo.css" rel="stylesheet" type="text/css" media="all"/> 
+      <link href="style.css" rel="stylesheet" type="text/css" media="all"/> 
 	<script type="text/javascript" src="JavaScript/validar.js"></script>
     <base target="_top">
  </head>
