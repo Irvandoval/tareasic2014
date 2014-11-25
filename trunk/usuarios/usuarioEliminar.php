@@ -48,7 +48,7 @@ Conexion::conectar();
      </td>
 	
 	 <td>
-        <input type="submit" class="boton purpura formaBoton" value="Eliminar"/>
+        <input type="submit" class="boton purpura" value="Eliminar"/>
         <input  type="hidden" name="elimina"  value="si" /> 
 	 </td>	
      </tr>	

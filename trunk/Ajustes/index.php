@@ -56,7 +56,7 @@ function imprime_celdas()
 			<input size="15" id="f_rangeStart" name="f_rangeStart"/>
 		</td>
 		<td>	
-		<button class='boton negro formaBoton' id="f_rangeStart_trigger">Calendario</button> 
+		<button class='boton2' id="f_rangeStart_trigger">Calendario</button> 
         <br>       
 		<script type="text/javascript">
 			RANGE_CAL_1 = new Calendar
@@ -87,7 +87,7 @@ function imprime_celdas()
 	</tr>
 	</table>
 	<br>
-	<table border="1" class="tabla">
+	<table border="0" class="tabla">
 	<tr class="modo1">
 		<th>Cuenta</th>
 		<th>Deber</th>
@@ -107,14 +107,14 @@ function imprime_celdas()
 	{
 	   imprime_celdas();
 	}
-	echo "<tr><td><b><a href='".$_SERVER['PHP_SELF']."?u=".($u+1)."' class='boton negro formaBoton'> Nueva cuenta</a></b></td> <td><b><a class='boton negro formaBoton' href='".$_SERVER['PHP_SELF']."?u=".($u-1)."' > Eliminar</a></b></td></tr>";
+	echo "<tr><td><b><a href='".$_SERVER['PHP_SELF']."?u=".($u+1)."' class='boton2'>+</a></b></td> <td><b><a class='boton2' href='".$_SERVER['PHP_SELF']."?u=".($u-1)."' >-</a></b></td></tr>";
 	?>
 	</table>
 	Describir Partida:<br> <br>
 	<textarea name="descripcion" rows="5" cols="86"></textarea><br>
 	<input type="hidden" value="<?php echo $u; ?>" name="n"> <br>
-	<input type="submit" class='boton negro formaBoton' value="Registrar">                    
-	<input type="reset" class='boton negro formaBoton' value="Limpiar Formulario">
+	<input type="submit" class='boton' value="Registrar">                    
+	<input type="reset" class='boton' value="Limpiar Formulario">
 	</form>
 	<br>
     

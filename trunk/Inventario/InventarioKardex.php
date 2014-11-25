@@ -43,7 +43,7 @@ $n=mysql_query($cuenta) or die(mysql_error());
 while($r=mysql_fetch_assoc($n)) 
 {
 
-echo "<table border=1 class='tabla'>
+echo "<table class='tabla'>
       <tr class='modo1'>
 	    <th rowspan='2' class='modo1'>N</th>
 	    <th rowspan='2' class='modo1'>Fecha</th>

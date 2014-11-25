@@ -43,11 +43,11 @@ echo "<table border=1 class='tabla'>
     while($r=mysql_fetch_assoc($result)) 
 	{
 	  echo"<tr>
-	         <td><a class='boton negro formaBoton' href=\"librodiarioDetalle.php?m=".$r['id']."\">".$r['dia']."</td></a>
-			 <td><a class='boton negro formaBoton' href=\"librodiarioDetalle.php?m=".$r['id']."\">".$r['mes']."</td></a>
-			 <td><a class='boton negro formaBoton' href=\"librodiarioDetalle.php?m=".$r['id']."\">".$r['year']."</td></a>
-			 <td><a class='boton negro formaBoton' href=\"librodiarioDetalle.php?m=".$r['id']."\">".$r['partida']."</td></a>
-			 <td><a class='boton negro formaBoton' href=\"librodiarioDetalle.php?m=".$r['id']."\">".$r['descripcion']."</td></a>
+	         <td><a class='boton2 azul' href=\"librodiarioDetalle.php?m=".$r['id']."\">".$r['dia']."</td></a>
+			 <td><a class='boton2 anaranjado' href=\"librodiarioDetalle.php?m=".$r['id']."\">".$r['mes']."</td></a>
+			 <td><a class='boton2 rosa' href=\"librodiarioDetalle.php?m=".$r['id']."\">".$r['year']."</td></a>
+			 <td><a class='boton2 purpura' href=\"librodiarioDetalle.php?m=".$r['id']."\">".$r['partida']."</td></a>
+			 <td><a class='boton2' href=\"librodiarioDetalle.php?m=".$r['id']."\">".$r['descripcion']."</td></a>
 		   </tr>";
 	}
 echo "</table>";

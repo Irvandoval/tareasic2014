@@ -35,10 +35,10 @@ Conexion::conectar();
 			      
 	 $result=mysql_query($balanceAnual) or die(mysql_error());
 
-	 echo "<table border='1' class='tabla'>";
+	 echo "<table border='0' class='tabla'>";
 	 
 	 echo "<tr> 
-	       <th colspan='6'  class='modo7'>
+	       <th colspan='6'  class='modo9'>
 			    <div align= 'center' >
 				   <p> IndustriMILK S.A de C.V </p>
 				   <p> Balance de Comprobacion </p>
@@ -90,12 +90,13 @@ Conexion::conectar();
 			<th>$ ".number_format($total,2)."</th> 
 			<th>$ ".number_format($total2,2)."</th> 
 		</tr>";
-     echo "<tr class='modo3'><td colspan='3' > <a href='balanceComprobacion.php'> <font color='white'> Ver Balance de Comprobacion Detallado </font></a></td></tr>"; 
+     echo "<tr class='modo1'><td colspan='3' > <a href='balanceComprobacion.php'> <font color='gray'> Ver Balance de Comprobacion Detallado </font></a></td></tr>"; 
 			
     echo "</table>";
 ?>
 
   <footer>
+      
   </footer>
   </div>
 </div>

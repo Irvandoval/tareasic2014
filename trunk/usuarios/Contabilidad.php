@@ -28,11 +28,11 @@ if($_SESSION['nivel']=='1')
    include('../menu.php');
 	menu2();
   echo "<table class='tabla'>";
-      echo "<tr class='modo3'><td><a href='../libroDiario/libroDiarioAnual.php'> <font color='white'> Ver Libro Diario </font></a></td></tr>"; 
-	  echo "<tr class='modo3'><td><a href='../balanceComprobacion/balanceComprobacionAnual.php'> <font color='white'> Ver Balance de Comprobacion </font></a></td></tr>";
-      echo "<tr class='modo3'><td><a href='../estadoResultados/EstadoResultado.php'> <font color='white'> Ver Estado de Resultado </font></a></td></tr>";
-      echo "<tr class='modo3'><td><a href='../estadoCapital/EstadoCapital.php'> <font color='white'> Ver Estado de Capital </font></a></td></tr>";
-      echo "<tr class='modo3'><td><a href='../balanceGeneral/BalanceGeneral.php'> <font color='white'> Ver Balance General </font></a></td></tr>";
+      echo "<tr class='modo3'><td><a href='../libroDiario/libroDiarioAnual.php'> <font color='gray'> Ver Libro Diario </font></a></td></tr>"; 
+	  echo "<tr class='modo3'><td><a href='../balanceComprobacion/balanceComprobacionAnual.php'> <font color='gray'> Ver Balance de Comprobacion </font></a></td></tr>";
+      echo "<tr class='modo3'><td><a href='../estadoResultados/EstadoResultado.php'> <font color='gray'> Ver Estado de Resultado </font></a></td></tr>";
+      echo "<tr class='modo3'><td><a href='../estadoCapital/EstadoCapital.php'> <font color='gray'> Ver Estado de Capital </font></a></td></tr>";
+      echo "<tr class='modo3'><td><a href='../balanceGeneral/BalanceGeneral.php'> <font color='gray'> Ver Balance General </font></a></td></tr>";
    echo "</table>";
   ?>
 

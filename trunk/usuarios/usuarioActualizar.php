@@ -37,8 +37,8 @@ Conexion::conectar();
 	 mostrarUsuario();
    ?> 
    <br> 
-   <input type="submit" class="boton purpura formaBoton" onclick = "this.form.action = 'usuarioActualizar.php'" value="Mostrar Usuarios" /> 
-   <input type="submit" class="boton purpura formaBoton" onclick = "this.form.action = 'usuariosRegistra.php'"   value="Actualizar" name="actualiza" /> 
+   <input type="submit" class="boton purpura" onclick = "this.form.action = 'usuarioActualizar.php'" value="Mostrar Usuarios" /> 
+   <input type="submit" class="boton purpura" onclick = "this.form.action = 'usuariosRegistra.php'"   value="Actualizar" name="actualiza" /> 
    </fieldset> 
    </form>   
     

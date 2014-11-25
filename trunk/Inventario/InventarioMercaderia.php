@@ -34,7 +34,7 @@ buscaProducto();
 
 ?>
 
-<input type="submit" class='boton negro formaBoton' value="Ver Kardex">
+<input type="submit" class='boton' value="Ver Kardex">
 </form>
 
 
