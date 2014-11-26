@@ -187,6 +187,10 @@ function cerrarOrden()
 		$eliminaOrden="DELETE FROM productoproceso WHERE orden =".$id;
 		$consultaEliminaOrden=mysql_query($eliminaOrden) or die(mysql_error());
 		
+      $saldo = $k*$precioUnitario;
+      //mandamos la orden terminada al inventario correspondiente
+      $transaccion="insert into transaccion(codigo,descripcion,fecha,cantidad,preciou,saldo, producto) values("."'1','ORDEN DE  FABRICACION "."$fecha','".$fecha."','".$k."','".$precioUnitario."', '".$saldo."' , '".$id."')";
+      $queryTransact = mysql_query($transaccion) or die (mysql_error);
 		//srand(time());
         //$aleatorio = rand(0,100);
         //$salario=($aleatorio/100)*3500;
@@ -196,6 +200,7 @@ function cerrarOrden()
 }
 
 
+    
 function buscarOrdenTerminada()
 {
     $buscaOT="SELECT  distinct DISTINCT orden, producto FROM productoterminado  order by id";

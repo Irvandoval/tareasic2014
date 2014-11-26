@@ -32,7 +32,7 @@ if(isset($_SESSION["id"]))
   
  <?php
 include('../menu.php');
-include('InventarioFunciones.php');
+
 menu2();
  ?> 
 
