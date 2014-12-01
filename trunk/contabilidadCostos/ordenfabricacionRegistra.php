@@ -35,10 +35,7 @@ elseif(isset($_GET['buscarOrden']) )
 { 
     cerrarOrden();  
     
-    echo "<script type=\"text/javascript\" >
-               alert('La Orden ha sido cerrada y Terminada.');
-               setTimeout(\"location.href='ordenfabricacion.php'\",1);
-            </script>"; 
+   
  		
 }
 elseif(isset($_GET['buscarOrdenTerminada']) )

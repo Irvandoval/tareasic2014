@@ -33,14 +33,24 @@ function insertarProducto()
 		    $orden=$ver['orden'];
 			$producto=$ver['producto'];
 		}
-		
+       $invfinal = obtenerQ(12);// obtenemos la cantidad de leche disponible para empezar una orden
+        if ($invfinal<= 0){
+               echo "<script type=\"text/javascript\" >
+               alert('".$invfinal."');
+               setTimeout(\"location.href='ordenfabricacion.php'\",1);
+            </script>"; 
+        }else{
+               
 	   $inserta="insert into productoproceso(orden,producto,fecha) values(".$orden.",'".$producto."', now())";
        mysql_query($inserta) or die(mysql_error()); 
 	   
        echo "<script type=\"text/javascript\" >
                alert('Los datos se han introducido correctamente.');
                setTimeout(\"location.href='ordenfabricacion.php'\",1);
-            </script>"; 	
+            </script>"; 
+        }
+   
+   	
        		
 	} 
 }
@@ -136,10 +146,85 @@ function verOrdenProceso()
 	
 
 }
+   
+  // obtenes el valor actual de unidades en inventario
+    
+function obtenerQ($s){
+    
+
+$k="SELECT producto from transaccion where producto=".$s;
+$pk=mysql_query($k) or die(mysql_error());
+while($prok=mysql_fetch_assoc($pk)) 
+{
+    $kardex=$prok['producto'];
+}
+
+$cuenta="SELECT count( id ) AS n FROM transaccion";
+$n=mysql_query($cuenta) or die(mysql_error());
+while($r=mysql_fetch_assoc($n)) 
+{
+	  
+	$qi=0;
+    $saldoi=0;	
+	$inventario="SELECT  id,fecha, descripcion ,codigo, cantidad, preciou, saldo FROM transaccion where codigo=0 and producto='".$s."' ";
+	$invenIni=mysql_query($inventario) or die(mysql_error());
+    while($inv=mysql_fetch_assoc($invenIni))
+	{
+		   $qi=$inv['cantidad']; 
+	       $pui=$inv['preciou']; 
+	       $saldoi=$inv['saldo']; 
+	} 
+
+    $opcion=1; 
+	$precio=0;
+	$total=0;   
+	$bandera=0;  
+	$costopro=0;
+	$uni=$qi;
+	$total=$saldoi;
+	for($i=1; $i<=$r['n']; $i++)
+	{
+
+	   	$transa="SELECT  distinct codigo, fecha, descripcion, id, cantidad, preciou ,saldo  FROM transaccion  where codigo>0 and producto='".$s."' order by id";
+	    $inven=mysql_query($transa) or die(mysql_error());
+		$bandera=$bandera+$i;
+        if($bandera==$i ) 
+		{
+		while($cp=mysql_fetch_assoc($inven)) 
+	    {
+		    if( $opcion==$cp['codigo']  )
+			{
+			  $saldo=$cp['cantidad']*$cp['preciou'];
+			  $uni=$uni+$cp['cantidad'];
+              $total=$total+$saldo;
+			  $costopro=$total/$uni;
+              $bandera=$bandera+$i;		 
+			}
+			else
+			{
+			 
+			  $saldo=$costopro*$cp['cantidad'];  
+			  $uni=$uni-$cp['cantidad']; 
+              $total=$total-$saldo;              
+			  $costopro=$total/$uni;
+			  $bandera=$bandera+$i;	
+			
+			}
+        } 
+		}
+    }
+    }	
+
+
+    return $uni;
+    
+}
 
 // esta funcion cerramos la orden y la terminamos para poder realizar la venta
 function cerrarOrden()  
 {
+    $razonltkg = 1.033;// conversion de litros a kg de leche
+    $razonkglt = 0.968;//conversion de kg a litros de leche
   if(isset($_GET['buscarOrden']))
 	{
        $id=htmlentities($_GET['buscarOrden']);
@@ -154,7 +239,6 @@ function cerrarOrden()
        //$fecha_fin=date("d-m-Y"); 
 	   $fecha_fin=date("Y-m-d H:i:s", strtotime ("next Thursday")); 
 	   $dias=DiferenciaDias($fecha,$fecha_fin);
-	   
 	   $cp="SELECT * FROM costoproceso WHERE producto='".$producto."' ";
 	   $consultaCP=mysql_query($cp) or die(mysql_error());
 	   
@@ -180,7 +264,17 @@ function cerrarOrden()
 		$costoT =round($costoTotal,2);
 		
 		$precioUnitario=round($costoT/$kilos,2);
-		
+         
+        $minl =obtenerQ(12);// obtenemos los litros de leche disponibles
+       
+         if($minl*$razonltkg<$kilos){
+              echo "<script type=\"text/javascript\" >
+               alert('ERROR, No hay insumos suficientes en existencia, no se ha efectuado el cierre de la orden');
+               setTimeout(\"location.href='ordenfabricacion.php'\",1);
+            </script>";   
+             
+         }else{
+             
 		$productoTerminado="insert into productoterminado(orden,producto,costoproduccion, costoadministracion, costoventa, costofinanciero,costototal, numerokilos, preciounitario) values('".$id."','".$producto."','".$costopro."','".$costoadm."','".$costoven."','".$costofin."', '".$costoTotal."', '".$kilos."', '".$precioUnitario."')";
 		$consultaProdcutoTerminado=mysql_query($productoTerminado) or die(mysql_error());
 	
@@ -188,12 +282,18 @@ function cerrarOrden()
 		$consultaEliminaOrden=mysql_query($eliminaOrden) or die(mysql_error());
 		
       $saldo = $k*$precioUnitario;
-      //mandamos la orden terminada al inventario correspondiente
-      $transaccion="insert into transaccion(codigo,descripcion,fecha,cantidad,preciou,saldo, producto) values("."'1','ORDEN DE  FABRICACION "."$fecha','".$fecha."','".$k."','".$precioUnitario."', '".$saldo."' , '".$id."')";
+      //mandamos la orden terminada al inventario de producto final correspondiente
+      $transaccion="insert into transaccion(codigo,descripcion,fecha,cantidad,preciou,saldo, producto) values("."'1','ORDEN DE  FABRICACION "."$fecha','".$fecha."','".$kilos."','".$precioUnitario."', '".$saldo."' , '".$id."')";
       $queryTransact = mysql_query($transaccion) or die (mysql_error);
-		//srand(time());
-        //$aleatorio = rand(0,100);
-        //$salario=($aleatorio/100)*3500;
+		
+     $transaccion="insert into transaccion(codigo,descripcion,fecha,cantidad,preciou,saldo, producto) values("."'2','INSUMO LECHE,ORDEN DE FABRICACION "."$fecha','".$fecha."','".round($kilos*$razonkglt,0)."','".$precioUnitario."', '".$saldo."' , 12)";
+      $queryTransact = mysql_query($transaccion) or die (mysql_error);
+              echo "<script type=\"text/javascript\" >
+               alert('La Orden ha sido cerrada y Terminada.');
+               setTimeout(\"location.href='ordenfabricacion.php'\",1);
+            </script>"; 
+         }
+      
 		
 		
 	}

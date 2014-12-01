@@ -162,10 +162,29 @@ function buscaProducto()
 
 			echo "<option value=".$ver['orden'].">".$ver['producto']." </option>";
 		}
+   
    echo "</select>"; 
    
 
 }
+
+function buscaProducto2()
+{
+   $busca="SELECT orden, producto FROM costoproceso";
+   $producto=mysql_query($busca) or die(mysql_error());
+   echo "<select name='buscarProductoKardex'>";
+   echo "<option value='0'>Seleccionar Producto</option>";
+		while($ver = mysql_fetch_array($producto))
+		{
+
+			echo "<option value=".$ver['orden'].">".$ver['producto']." </option>";
+		}
+   echo "<option value=12>Leche</option>";
+   echo "</select>"; 
+   
+
+}
+
 
 ?>
 

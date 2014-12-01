@@ -22,21 +22,25 @@ if(isset($_SESSION["id"]))
   <header> 
      
   </header>
+     
 <form name="kardex" method="post" action="InventarioKardex.php">
-
 <?php
 include('../menu.php');
+   
 include('InventarioFunciones.php');
 menu2();
-  
-
+     echo " <div id='tc'>";
 buscaProducto();
-
 ?>
 
-<input type="submit" class='boton' value="Ver Kardex">
+<input type="submit" class='boton' value="Ver Kardex P.T">
+</div>
 </form>
-
+<form name="kardex" method="post" action="InventarioKardexMP.php">
+    <div id="algo" >
+    <input type="submit" class='boton' value="Ver Kardex M.P">
+    </div>
+</form>
 
   </div>
 </div>
