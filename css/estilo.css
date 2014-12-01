@@ -56,6 +56,15 @@ h1, h2, h3 {
 	color: #919191;
 }
 
+#algo{
+   position: relative;
+    margin-left: 300px;
+}
+
+#tc{
+    margin-left:200px;
+}
+
 .container {
 	width: 800px;
 	margin: 0px auto;

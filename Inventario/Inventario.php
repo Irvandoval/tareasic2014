@@ -32,7 +32,7 @@ if(isset($_SESSION["id"]))
   
  <?php
 include('../menu.php');
-
+include('InventarioFunciones.php');
 menu2();
  ?> 
 
@@ -44,7 +44,8 @@ menu2();
 <table border='0'  class='tabla' cellspacing='2' cellspacing='2'>
    <tr class='modo1'> 
         <td>Producto</td>
-        <td> <?php buscaProducto(); ?>   </td>
+        <td> <?php buscaProducto2(); ?>          
+       </td>
    </tr>
    <tr class='modo1'> 
         <td>Transaccion </td>
@@ -95,7 +96,7 @@ menu2();
    <tr class='modo1'> 
         <td>cantidad</td>
 		<td><input type="text" name="cantidad"></td>
-   </tr class='modo1'>
+   </tr>
 	
    <tr class='modo1' > 
         <td>Precio</td>

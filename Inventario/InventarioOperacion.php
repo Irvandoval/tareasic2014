@@ -21,7 +21,7 @@ if(isset($_POST['operacion']) &&  isset($_POST['descripcion']) && isset($_POST['
 	  $transaccion="insert into transaccion(codigo,descripcion,fecha,cantidad,preciou,saldo, producto) values(".$operacion.",'".$descripcion."','".$fecha."','".$cantidad."','".$precio."', '".$saldo."' , '".$producto."')";
       mysql_query($transaccion) or die(mysql_error());  
 	  echo "<script type=\"text/javascript\" >
-               alert('Los datos se han introducido correptamente.');
+               alert('Los datos se han introducido correctamente.');
                setTimeout(\"location.href='Inventario.php'\",1);
            </script>";
     }else
@@ -29,7 +29,7 @@ if(isset($_POST['operacion']) &&  isset($_POST['descripcion']) && isset($_POST['
 	  $transaccion="insert into transaccion(codigo,descripcion,fecha,cantidad,preciou,saldo, producto) values(".$operacion.",'".$descripcion."','".$fecha."','".$cantidad."','".$precio."','1', '".$producto."')";
       mysql_query($transaccion) or die(mysql_error());  
 	  echo "<script type=\"text/javascript\" >
-               alert('Los datos se han introducido correptamente.');
+               alert('Los datos se han introducido correctamente.');
                setTimeout(\"location.href='Inventario.php'\",1);
            </script>";
 	}
