@@ -47,8 +47,7 @@ while($r=mysql_fetch_assoc($result)) {
 echo "</table>";
 ?>
 
- <footer>
-  </footer>
+
   </div>
 </div>
  

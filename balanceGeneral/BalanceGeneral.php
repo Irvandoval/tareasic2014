@@ -42,7 +42,7 @@ echo "<table border='1' class='tabla'>";
 			    <div align= 'center' >
 				   <p> IndustriMILK S.A de C.V </p>
 				   <p> Balance de General </p>
-				   <p> Del 1 de enero al 30  diciembre de 2013 </p>
+				   <p> Del 1 de enero al 30  diciembre de 2014 </p>
 				   
 				</div>	
 		    </th> 

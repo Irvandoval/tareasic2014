@@ -44,7 +44,7 @@ echo "<table border='1' class='tabla'>";
 				<div align= 'center' >
 				   <p> IndustriMILK S.A de C.V </p>
 				   <p> Estado de Capital </p>
-				   <p> Del 01 de enero al 30 noviembre 2013 </p>
+				   <p> Del 01 de enero al 30 noviembre 2014 </p>
 				   
 				</div>	
 				</th> 

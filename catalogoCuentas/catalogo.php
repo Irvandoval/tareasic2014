@@ -60,8 +60,6 @@ echo "</table>";
 
 ?>
 
-  <footer>
-  </footer>
   </div>
 </div>
  
